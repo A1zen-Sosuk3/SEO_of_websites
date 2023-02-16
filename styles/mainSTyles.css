@@ -381,7 +381,7 @@ body.lock1 {
     flex-direction: column;
     max-width: 750px;
     align-self: center;
-    margin: 8px;
+    margin: 6px;
 }
 
 @media (max-width: 280px) {
