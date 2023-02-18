@@ -98,7 +98,6 @@ ul {
     background-position: center;
     overflow: hidden;
     background-size: cover;
-    opacity: 1;
 }
 
 .card_item:nth-child(1) {
@@ -202,4 +201,23 @@ body::-webkit-scrollbar-track {
 
 .typed-strings span {
     padding: 1rem;
+}
+
+.flsc_button {
+    padding: 7px 20px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-color: #8bed23;
+    outline: 1px solid #8bed23;
+    transition: .2s ease;
+}
+
+.flsc_button:hover {
+    background-color: #ffffff00;
 }
