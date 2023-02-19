@@ -402,31 +402,24 @@ body.lock1 {
     display: flex;
     gap: 20px;
     justify-content: center;
-    animation: turnOn2 .6s ease-in-out;
     align-items: center;
     position: fixed;
     top: 80px;
     right: 10px;
     z-index: 1;
     max-width: 500px;
-    display: none;
+    display: flex;
     box-shadow: var(--shadow-alert);
+    opacity: 0;
+    transform: translate(200px);
+    transition: .6s ease;
+    pointer-events: none;
 }
 
 .alert.active {
-    display: flex;
-}
-
-@keyframes turnOn2 {
-    0% {
-        transform: translate(200px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translate(0px);
-        opacity: 1;
-    }
+    transform: translate(0px);
+    opacity: 1;
+    pointer-events: all;
 }
 
 .alert_text {
@@ -445,13 +438,15 @@ body.lock1 {
     fill: var(--color-text);
 }
 
-@media (max-width: 520px) {
+@media (max-width: 517px) {
     .alert {
         flex-direction: column-reverse;
-        top: 70px;
-        left: 0;
-        border-radius: 0px;
         width: 100%;
+        top: 70px;
+        right: 0;
+        margin: 0;
+        border-radius: 0px;
+        transform: translate(0, -300px);
     }
 
     .btn-close {
@@ -903,7 +898,7 @@ body.lock1 {
 .item-with_dot,
 .item-with_dot2 {
     list-style: disc;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -1126,6 +1121,7 @@ body.lock1 {
 
 .pagination a:hover {
     transform: scale(1.5);
+    text-decoration: underline;
 }
 
 abbr {

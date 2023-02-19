@@ -6,7 +6,7 @@ body {
 
 body,
 html {
-    background-image: url(../pics/Wave-10s-1536px.svg);
+    /* background-image: url(../pics/Wave-10s-1536px.svg); */
     background-color: black;
     background-position: top;
     background-size: cover;
@@ -40,6 +40,9 @@ ul {
 
 .index_header {
     padding: 1rem 5rem;
+    height: 60px;
+    width: 100%;
+    margin: 0 0 90px 0;
 }
 
 .typing_animation {
@@ -79,7 +82,7 @@ ul {
 
 .navigation_bar {
     display: flex;
-    gap: 18px;
+    gap: 21px;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 100%;
@@ -197,27 +200,4 @@ body::-webkit-scrollbar-thumb:active {
 body::-webkit-scrollbar-track {
     width: 8px;
     background-color: #000000;
-}
-
-.typed-strings span {
-    padding: 1rem;
-}
-
-.flsc_button {
-    padding: 7px 20px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-    background-color: #8bed23;
-    outline: 1px solid #8bed23;
-    transition: .2s ease;
-}
-
-.flsc_button:hover {
-    background-color: #ffffff00;
 }
