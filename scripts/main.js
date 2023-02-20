@@ -101,22 +101,34 @@ $(document).ready(function () {
         $('.dropdown_menu3, .header_link3, .triangle3').removeClass('active');
     });
 
-    // theme - switcher + saver
+    $(document).on('keyup', function (e) {
+        if (e.key == "Escape") {
+            $('.dropdown_menu3, .header_link3, .triangle3, .dropdown_menu, .header_link1, .triangle, .dropdown_menu2, .header_link2, .triangle2').removeClass('active');
+        }
+    });
+    // $(document).mouseup(function (e) {
+    //     const div = $("#dropdown"); 
+    //     if (!div.is(e.target)
+    //         && div.has(e.target).length === 0) {
+    //         $('.dropdown_menu3, .header_link3, .triangle3, .dropdown_menu, .header_link1, .triangle, .dropdown_menu2, .header_link2, .triangle2').removeClass('active');
+    //     }
+    // });
+    // theme switcher + saver
     $('.checkbox').click(function (event) {
 
         $('.checkbox').toggleClass('active');
 
         if ($('.checkbox').hasClass('active')) {
             $('html').removeClass('dark').addClass('light');
-            localStorage.setItem("lightIsactive", "true")
+            localStorage.setItem("lightIsactive", "true");
         } else {
             $('html').removeClass('light').addClass('dark');
-            localStorage.clear()
+            localStorage["lightIsactive"] = "false";
         };
     });
     const lightIsactive = localStorage.getItem("lightIsactive");
     if (lightIsactive == "true") {
         $('html').removeClass('dark').addClass('light');
         $('.checkbox').addClass('active')
-    };
+    } else { $('html').removeClass('light').addClass('dark'); $('.checkbox').remove('active') };
 });

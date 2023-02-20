@@ -1,2 +1,2 @@
 # SEO_of_websites
-School project, something like start course of seo websites, idk
+School project, something like starter course for beginners in seo websites, idk

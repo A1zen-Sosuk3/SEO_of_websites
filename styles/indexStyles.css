@@ -1,17 +1,42 @@
-body {
-    color: #fff;
-    margin: 0;
-    padding: 0;
+/* .menu_container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ffffff60;
+    border: 1px solid #000000;
+}
+
+.menu_container::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff80;
+}
+
+.menu_container::-webkit-scrollbar-thumb:active {
+    background-color: #ffffff;
+}
+
+.menu_container::-webkit-scrollbar-track {
+    width: 8px;
+    background-color: #000000;
+} */
+
+html.dark {
+    --bg-nav: #000000b4;
+    --arrow: url(../pics/icons8-chevron-left-90_black.png);
+}
+
+html.light {
+    --bg-nav: #000000b4;
+    --arrow: url(../pics/icons8-chevron-left-90.png);
 }
 
 body,
 html {
-    /* background-image: url(../pics/Wave-10s-1536px.svg); */
     background-color: black;
     background-position: top;
     background-size: cover;
     background-attachment: local;
     background-repeat: no-repeat;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -22,10 +47,6 @@ a {
 ul {
     padding: 0;
     margin: 0;
-}
-
-.context {
-    padding: 1rem;
 }
 
 /* start of content styles */
@@ -39,165 +60,162 @@ ul {
 }
 
 .index_header {
-    padding: 1rem 5rem;
-    height: 60px;
     width: 100%;
-    margin: 0 0 90px 0;
+    height: 80px;
 }
 
 .typing_animation {
     font-size: 40px;
-    margin: 20px 0;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+}
+
+@media (max-width: 895px) {
+    .typing_animation {
+        position: unset;
+        left: 0;
+    }
+
+    .index_header {
+        padding: 1rem;
+    }
+
 }
 
 #typed {
     display: inline;
 }
 
-@keyframes tadam {
-    from {
-        display: none;
-        opacity: 0;
-        transform: translate(0, 200px);
-    }
-
-    to {
-        display: block;
-        transform: translate(0);
-    }
-}
-
-@media (max-width: 610px) {
-    .index_header {
-        padding: 1rem;
-    }
-}
-
 .index_main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .navigation_bar {
-    display: flex;
-    gap: 21px;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 100%;
-    margin-top: 5%;
-}
-
-.card_item {
-    width: 210px;
-    height: 210px;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    transform: translate(235px);
     transition: all .4s ease;
+    gap: 15px;
+}
+
+.menu_container {
+    height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-nav);
+    color: var(--color-text);
+    margin-left: auto;
+    transition: all .4s ease;
+    overflow: auto;
+    padding: 10px 0;
+    width: fit-content;
+}
+
+.card_container {
+    cursor: pointer;
+    padding: 30px 40px;
+    display: flex;
+    gap: 50px;
+    transition: all .3s ease;
+}
+
+.card_container:hover {
+    background-color: #ffffff99;
+}
+
+.icon_theme {
+    width: 30px;
+    height: 30px;
+}
+
+.open_button {
+    min-width: 30px;
+    min-height: 30px;
+    cursor: pointer;
+    transition: .4s ease;
+    background-image: var(--arrow);
+    background-size: contain;
     background-position: center;
-    overflow: hidden;
-    background-size: cover;
+    transition: all .3s ease;
 }
 
-.card_item:nth-child(1) {
-    background-image: url(../pics/rick-rothenberg-7lkVnPZGYU4-unsplash.jpg);
-}
-
-.card_item:nth-child(2) {
-    background-image: url(../pics/rick-rothenberg-90LtDhjfjys-unsplash.jpg);
-}
-
-.card_item:nth-child(3) {
-    background-image: url(../pics/rick-rothenberg-DiKRqjEv8Bc-unsplash.jpg);
-}
-
-.card_item:nth-child(4) {
-    background-image: url(../pics/rick-rothenberg-Qb2jFwHNsSc-unsplash.jpg);
-}
-
-.card_item:nth-child(5) {
-    background-image: url(../pics/rick-rothenberg-RgnlhZ4RWpQ-unsplash.jpg);
-}
-
-.info_container {
-    width: 100%;
-    padding: 1rem;
-    margin-top: auto;
-    border-radius: 0 0 14px 14px;
-    background-color: #000000ab;
-}
-
-.info_text {
-    font-weight: 300;
-    font-size: 15px;
-    margin-top: 15px;
-    display: none;
-}
-
-.card_item:hover {
-    transform: scale(1.2);
-}
-
-.card_item:hover .card_title {
-    color: rgb(255, 255, 46);
-}
-
-.card_item:hover .info_text {
-    display: block;
-    animation: tadam2 .4s ease;
+.open_button.active {
+    transform: rotate(-180deg);
 }
 
 .card_title {
-    margin: 0 auto;
-    font-size: 18px;
-    font-weight: 600;
-    width: 100%;
-    display: flex;
-    gap: 7px;
+    font-size: 25px;
 }
 
-@keyframes tadam2 {
-    0% {
-        opacity: 0;
-        transform: scale(0);
+.navigation_bar.active {
+    transform: translate(0px);
+}
+
+.navigation_bar.active .open_button {
+    transform: rotate(180deg);
+}
+
+.navigation_bar.active .card_container {
+    gap: 10px;
+}
+
+@media (min-width: 1367px) {
+
+    .navigation_bar:hover,
+    .navigation_bar.active {
+        transform: translate(0px);
     }
 
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
+    .navigation_bar:hover .open_button {
+        transform: rotate(180deg);
     }
 
-    100% {
-        opacity: 1;
-        transform: scale(1);
+    .navigation_bar:hover .card_container,
+    .navigation_bar.active .card_container {
+        gap: 10px;
     }
-}
 
-@media (max-width: 700px) {
-    .card_item:last-child {
-        margin-bottom: 30px;
+    .open_button:hover {
+        opacity: 0.6;
     }
 }
 
-body::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #ffffff60;
-    border: 1px solid #000000;
+@media (max-width: 614px) {
+    .navigation_bar {
+        transform: translate(88%);
+    }
+
+    .open_button {
+        width: 50px;
+        height: 50px;
+    }
 }
 
-body::-webkit-scrollbar-thumb:hover {
-    background-color: #ffffff80;
+@media (max-height: 484px) {
+    .menu_container {
+        justify-content: start;
+    }
 }
 
-body::-webkit-scrollbar-thumb:active {
-    background-color: #ffffff;
-}
+@media (max-width: 360px) {
+    .card_title {
+        display: none;
+    }
 
-body::-webkit-scrollbar-track {
-    width: 8px;
-    background-color: #000000;
+    .navigation_bar {
+        transform: translate(75%);
+    }
+
+    .card_container {
+        gap: 10px
+    }
 }
