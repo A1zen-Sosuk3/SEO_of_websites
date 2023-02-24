@@ -52,8 +52,14 @@ const menu = document.querySelector('.navigation_bar');
 
 openBtn.addEventListener('click', () => {
     menu.classList.toggle('active');
-    openBtn.classList.toggle('active')
 });
+menu.addEventListener('change', function () {
+    if (menu.classList.contains('active')) {
+        openBtn.classList.toggle('active')
+    } else {
+        openBtn.classList.remove('active')
+    }
+})
 
 document.addEventListener('click', (e) => {
     const withinBoundaries = e.composedPath().includes(menu);

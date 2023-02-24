@@ -92,7 +92,6 @@ $(document).ready(function () {
     $('.header_link, .header_link1, .header_link3').click(function (event) {
         $('.dropdown_menu2, .header_link2, .triangle2').removeClass('active');
     });
-
     // dropdown menu3
     $('.dropdown_menu_button3').click(function (event) {
         $('.dropdown_menu3, .header_link3, .triangle3').toggleClass('active');
@@ -100,19 +99,12 @@ $(document).ready(function () {
     $('.header_link, .header_link1, .header_link2').click(function (event) {
         $('.dropdown_menu3, .header_link3, .triangle3').removeClass('active');
     });
-
     $(document).on('keyup', function (e) {
         if (e.key == "Escape") {
             $('.dropdown_menu3, .header_link3, .triangle3, .dropdown_menu, .header_link1, .triangle, .dropdown_menu2, .header_link2, .triangle2').removeClass('active');
         }
     });
-    // $(document).mouseup(function (e) {
-    //     const div = $("#dropdown"); 
-    //     if (!div.is(e.target)
-    //         && div.has(e.target).length === 0) {
-    //         $('.dropdown_menu3, .header_link3, .triangle3, .dropdown_menu, .header_link1, .triangle, .dropdown_menu2, .header_link2, .triangle2').removeClass('active');
-    //     }
-    // });
+
     // theme switcher + saver
     $('.checkbox').click(function (event) {
 
