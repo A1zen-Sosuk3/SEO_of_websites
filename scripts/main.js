@@ -1,7 +1,7 @@
 "use strict"
 console.log('problems?')
 
-// To Top Button
+// To Top Button & main nav menu
 
 const scrollBtn = document.querySelector('.isShowBtn');
 
@@ -12,12 +12,12 @@ window.onscroll = () => {
         scrollBtn.classList.add('hide')
     }
 };
-
 scrollBtn.onclick = () => {
     window.scrollTo(0, 0);
-};
+}; 
 
 //scroll animation
+
 const animItems = document.querySelectorAll('._anim_items');
 
 if (animItems.length > 0) {
@@ -58,17 +58,34 @@ if (animItems.length > 0) {
 //alert message
 const alertWindow = document.querySelector('.alert');
 const xMark = document.querySelector('.btn-close');
-const hideAlert = sessionStorage.getItem("hideAlert")
+const hideAlert = sessionStorage.getItem("hideAlert");
+const navMenu = document.querySelector('.navigation_menu_container');
 
 alertWindow.classList.add('active')
 xMark.addEventListener('click', () => {
     alertWindow.classList.remove('active');
+    navMenu.classList.remove('active')
     sessionStorage.setItem("hideAlert", "hide")
 });
 
 if (hideAlert == "hide") {
-    alertWindow.classList.remove('active')
-};
+    alertWindow.classList.remove('active');
+} else if (hideAlert !== "hide") {
+    navMenu.classList.add('active')
+} 
+
+navMenu.addEventListener('click', addFullVersion);
+function addFullVersion() {
+    navMenu.classList.toggle('full')
+}
+
+document.addEventListener('click', (e) => {
+    const withinBoundaries = e.composedPath().includes(navMenu);
+
+    if (!withinBoundaries) {
+        navMenu.classList.remove('full');
+    }
+});
 
 // burger menu
 $(document).ready(function () {

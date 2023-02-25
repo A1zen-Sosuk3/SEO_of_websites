@@ -1,5 +1,7 @@
 "use strict"
 
+console.log('problems?')
+
 let typed = new Typed('#typed', {
     typeSpeed: 170,
     backSpeed: 50,
@@ -7,7 +9,6 @@ let typed = new Typed('#typed', {
     loop: true,
     stringsElement: '#typed-strings'
 });
-
 
 const lightIsactive = localStorage.getItem("lightIsactive");
 const html = document.querySelector("html");
@@ -69,8 +70,25 @@ document.addEventListener('click', (e) => {
     }
 });
 
+const aboutMenu = document.querySelector('.list_of_themes_explanations');
+const aboutButton = document.querySelector('.moreinfo_button');
+
+aboutButton.addEventListener('click', animation);
+function animation() {
+    aboutMenu.classList.toggle('active');
+} 
+
 document.addEventListener('keydown', function (e) {
     if (e.keyCode == 27) {
         menu.classList.remove('active');
+        aboutMenu.classList.remove('active');
+    }
+});
+
+document.addEventListener('click', (e) => {
+    const withinBoundariess = e.composedPath().includes(aboutButton);
+
+    if (!withinBoundariess) {
+        aboutMenu.classList.remove('active');
     }
 });
