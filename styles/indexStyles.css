@@ -9,7 +9,6 @@ html.dark {
   --addition_icon: url(../pics/addition_icon_black.png);
   --info_btn: url(../pics/icons8-info-120_black.png);
   --explanation-text: #e60c8b;
-  --bs-accordion-color: #000;
 }
 html.light {
   --arrow: url(../pics/icons8-chevron-left-90.png);
@@ -22,7 +21,6 @@ html.light {
   --addition_icon: url(../pics/addition_icon.png);
   --info_btn: url(../pics/icons8-info-120.png);
   --explanation-text: #d5ff40;
-  --bs-accordion-color: #fff;
 }
 body,
 html {
