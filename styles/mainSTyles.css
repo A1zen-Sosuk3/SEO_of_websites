@@ -240,6 +240,7 @@ body::-webkit-scrollbar {
     height: 2px;
     top: 9px;
     transition: all 0.3s ease;
+    border-radius: 20px;
   }
   .header_burger::before,
   .header_burger::after {
@@ -250,6 +251,7 @@ body::-webkit-scrollbar {
     height: 2px;
     left: 0;
     transition: all 0.3s ease;
+    border-radius: 20px;
   }
   .header_burger::before {
     top: 0;
@@ -897,9 +899,9 @@ body::-webkit-scrollbar {
 .types-of-sites_item2,
 .code_block,
 .item-with_dot2 {
-  transform: translate(0px, 120px);
+  transform: translate(0px, 130px);
   opacity: 0;
-  transition: 0.4s ease;
+  transition: 0.6s ease;
 }
 .definition.visible,
 .main-picture_container.visible,
@@ -930,6 +932,7 @@ body::-webkit-scrollbar {
 .pagination div {
   opacity: 0.5;
   padding: 5px;
+  text-decoration: underline;
 }
 .pagination a {
   color: var(--color-text);
@@ -1047,9 +1050,6 @@ abbr {
   }
   .navigation_menu_item:hover {
     opacity: 0.5;
-  }
-  a .navigation_menu_item:hover {
-    transform: scale(1.1);
   }
 }
 @media (max-width: 320px) {

@@ -204,8 +204,8 @@ ul {
   background-position: center;
   cursor: pointer;
   position: absolute;
-  bottom: 25px;
-  left: 25px;
+  bottom: 15px;
+  left: 15px;
   opacity: 1;
   transition: all 0.3s ease;
 }
@@ -224,8 +224,8 @@ ul {
   position: absolute;
   margin: 0 50px 0 0;
   border-radius: 14px;
-  left: 25px;
-  bottom: 68px;
+  left: 15px;
+  bottom: 58px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
   opacity: 0;
   pointer-events: none;
@@ -249,6 +249,7 @@ body::-webkit-scrollbar {
   .list_of_themes_explanations {
     max-width: 450px;
     overflow: auto;
+    border-radius: 14px 0 0 14px;
   }
 }
 @media (min-width: 1367px) {
