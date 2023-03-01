@@ -128,14 +128,14 @@ $(document).ready(function () {
       ).removeClass('active');
     }
   });
-  $(document).mouseup(function (e) {
-    var div = $(
-      '.dropdown_menu3, .header_link3, .triangle3, .dropdown_menu, .header_link1, .triangle, .dropdown_menu2, .header_link2, .triangle2'
-    );
-    if (!div.is(e.target) && div.has(e.target).length === 0) {
-      div.removeClass('active');
-    }
-  });
+  // $(document).mouseup(function (e) {
+  //   var div = $(
+  //     '.dropdown_menu3, .header_link3, .triangle3, .dropdown_menu, .header_link1, .triangle, .dropdown_menu2, .header_link2, .triangle2'
+  //   );
+  //   if (!div.is(e.target) && div.has(e.target).length === 0) {
+  //     div.removeClass('active');
+  //   }
+  // });
 
   // theme switcher + saver
   $('.checkbox').click(function (event) {
